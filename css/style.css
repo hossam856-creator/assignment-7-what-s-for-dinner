@@ -1,0 +1,241 @@
+/* ==========================================================
+   What's For Dinner — style.css (on top of Bootstrap 5.3)
+   ========================================================== */
+
+:root {
+  --wfd-orange: #f97316;
+  --wfd-orange-dark: #ea580c;
+  --wfd-red: #ef4444;
+  --wfd-orange-soft: #ffedd5;
+  --wfd-amber-soft: #fffbeb;
+  --wfd-border: #ffedd5;
+
+  --bs-font-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  font-family: var(--bs-font-sans-serif);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff7ed 0%, #fffbeb 50%, #fefce8 100%);
+  background-attachment: fixed;
+}
+
+/* ---------- Header ---------- */
+.wfd-header {
+  border-bottom: 1px solid var(--wfd-border);
+}
+
+.wfd-logo {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--wfd-orange), var(--wfd-red));
+}
+
+.wfd-avatar {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fdba74;
+  object-fit: cover;
+}
+
+.wfd-nav .nav-link {
+  color: #4b5563;
+  transition: color 0.2s;
+}
+
+.wfd-nav .nav-link:hover,
+.wfd-nav .nav-link:focus {
+  color: var(--wfd-orange-dark);
+}
+
+@media (max-width: 767.98px) {
+  .wfd-avatar { width: 32px; height: 32px; }
+}
+
+/* ---------- Card layout ---------- */
+.wfd-card {
+  border-radius: 1.5rem;
+  border: 1px solid var(--wfd-border) !important;
+}
+
+@media (min-width: 992px) {
+  .wfd-card-row { height: 750px; }
+}
+
+.wfd-media {
+  height: 400px;
+  overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  .wfd-media { height: 100%; }
+}
+
+.wfd-placeholder {
+  background: linear-gradient(135deg, #fed7aa, #fca5a5);
+}
+
+.wfd-placeholder.show { display: flex !important; }
+
+.wfd-stats {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+}
+
+.wfd-details {
+  overflow-y: auto;
+}
+
+.text-orange { color: var(--wfd-orange) !important; }
+
+/* ---------- Buttons ---------- */
+.wfd-icon-btn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--wfd-orange-soft);
+  color: var(--wfd-orange-dark);
+  border: 0;
+  border-radius: 0.75rem;
+  transition: background 0.2s;
+}
+
+.wfd-icon-btn:hover,
+.wfd-icon-btn:focus-visible {
+  background: #fed7aa;
+  color: var(--wfd-orange-dark);
+}
+
+.btn-wfd {
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-color: #fff;
+  color: #fff;
+  border: 0;
+  background: linear-gradient(90deg, var(--wfd-orange), var(--wfd-red));
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+
+.btn-wfd:hover,
+.btn-wfd:focus-visible {
+  color: #fff;
+  filter: brightness(0.92);
+  transform: scale(1.05);
+}
+
+/* ---------- Tabs ---------- */
+.wfd-tabs {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.wfd-tabs .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 0.5rem 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  margin-bottom: -1px;
+}
+
+.wfd-tabs .nav-link span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wfd-tabs .nav-link:hover {
+  color: #374151;
+}
+
+.wfd-tabs .nav-link.active {
+  color: var(--wfd-orange-dark);
+  background: transparent;
+  border-bottom-color: var(--wfd-orange-dark);
+}
+
+@media (min-width: 768px) {
+  .wfd-tabs .nav-link { font-size: 1rem; }
+}
+
+.wfd-tab-content {
+  height: 350px;
+  overflow-y: auto;
+}
+
+/* ---------- Content blocks ---------- */
+.wfd-soft-box {
+  background: linear-gradient(135deg, #fff7ed, #fffbeb);
+}
+
+.wfd-num-sm {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--wfd-orange);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.wfd-num-lg {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background: var(--wfd-orange);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.wfd-nutri-card {
+  background: #f9fafb;
+  border-radius: 0.75rem;
+}
+
+.wfd-nutri-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+
+.wfd-tip {
+  background: var(--wfd-amber-soft);
+  border-left: 4px solid #fbbf24;
+  border-radius: 0.75rem;
+}
+
+/* ---------- Animation ---------- */
+.fade-in {
+  animation: wfdFadeIn 0.35s ease;
+}
+
+@keyframes wfdFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { animation: none; }
+  .btn-wfd:hover { transform: none; }
+}
